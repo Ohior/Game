@@ -1,0 +1,11 @@
+<html>
+<head>
+    <title>game</title>
+</head>
+<body bgcolor=#00AA00>
+    <form action='{% url "save_name" %}' method='post'>{%csrf_token%}
+        <h1 align='center'>Enter your username <input type='text' name='username'>
+        <input type='submit' value='save'></h1>
+    </form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>tictactoe</title>
+</head>
+<body bgcolor=#00AA00>
+    <h1 align='center'><a href='{% url "home_page" %}'>Tictaotoe</a> </h1>
+    <table border='10' width='100%' bgcolor="#FF0000">
+        <tr >
+            <td width='16%'><a href='{% url "game_is_playing" 1 %}'><h1 align='center'>{{Tic.Tic.1}}</h1></a></td>
+            <td width='16%'><a href='{% url "game_is_playing" 2 %}'><h1 align='center'>{{Tic.Tic.2}}</h1></a></td>
+            <td width='16%'><a href='{% url "game_is_playing" 3 %}'><h1 align='center'>{{Tic.Tic.3}}</h1></a></td>
+            <td width='25%'><a href='{% url "game_is_playing" 0 %}'><h2>{{Tic.info}}</h2></a></td>
+            <td width='25'><h2>{% ifequal Tic.win "O" %}COMPUTER WON
+            {% else%}{% endifequal %}
+            {% ifequal Tic.win "X" %}{{Tic.player|upper}} WON{% endifequal %}</h1></td>
+
+        </tr>
+    <table border='10' width='100%' bgcolor="#FF0000">
+        <tr >
+            <td width='16%'><a href='{% url "game_is_playing" 4 %}'><h1 align='center'>{{Tic.Tic.4}}</h1></a></td>
+            <td width='16%'><a href='{% url "game_is_playing" 5 %}'><h1 align='center'>{{Tic.Tic.5}}</h1></a></td>
+            <td width='16%'><a href='{% url "game_is_playing" 6 %}'><h1 align='center'>{{Tic.Tic.6}}</h1></a></td>
+            <td width='50%'><h2>{{Tic.player}} you are 'X' while computer is 'O'</h2>
+            </td>
+        </tr>
+    </table>
+    <table border='10' width='100%' bgcolor="#FF0000">
+            <td width='16%'><a href='{% url "game_is_playing" 7 %}'><h1 align='center'>{{Tic.Tic.7}}</h1></a></td>
+            <td width='16%'><a href='{% url "game_is_playing" 8 %}'><h1 align='center'>{{Tic.Tic.8}}</h1></a></td>
+            <td width='16%'><a href='{% url "game_is_playing" 9 %}'><h1 align='center'>{{Tic.Tic.9}}</h1></a></td>
+            <td width='25%'><h3>COMPUTER : {{Tic.computer_score}}</h1></td>
+            <td width='25%'><h3>{{Tic.player|upper}} : {{Tic.player_score}}</h1></td>
+        </tr>
+    </table>
+    <h2 align='center'><a href='{% url "clear_score" %}'>clear scores</a> <a href='{% url "home_page" %}'>change name</a></h2>
+</body>
+</html>
